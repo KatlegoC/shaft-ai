@@ -44,6 +44,9 @@ export default function WorkPage() {
                   <h2 className="mt-1 text-3xl font-semibold tracking-tight text-paper sm:text-4xl">
                     {product.name}
                   </h2>
+                  {product.client && (
+                    <p className="mt-3 text-muted">{product.client}</p>
+                  )}
                 </div>
               </div>
 
@@ -61,9 +64,22 @@ export default function WorkPage() {
                   <h3 className="text-xl font-semibold tracking-tight text-paper">
                     What we built
                   </h3>
-                  <p className="mt-4 leading-relaxed text-muted">
-                    {product.whatWeBuilt}
-                  </p>
+                  {typeof product.whatWeBuilt === "string" ? (
+                    <p className="mt-4 leading-relaxed text-muted">
+                      {product.whatWeBuilt}
+                    </p>
+                  ) : (
+                    <ul className="mt-4 space-y-3">
+                      {product.whatWeBuilt.map((item) => (
+                        <li
+                          key={item}
+                          className="border-l border-line pl-4 leading-relaxed text-muted"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
 
@@ -83,20 +99,26 @@ export default function WorkPage() {
                 </ul>
               </div>
 
-              <div className="mt-12 grid gap-8 sm:grid-cols-2">
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
-                    Status
-                  </h3>
-                  <p className="mt-2 text-paper">{product.status}</p>
+              {(product.status || product.metrics) && (
+                <div className="mt-12 grid gap-8 sm:grid-cols-2">
+                  {product.status && (
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
+                        Status
+                      </h3>
+                      <p className="mt-2 text-paper">{product.status}</p>
+                    </div>
+                  )}
+                  {product.metrics && (
+                    <div>
+                      <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
+                        Metrics
+                      </h3>
+                      <p className="mt-2 text-muted">{product.metrics}</p>
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-amber">
-                    Metrics
-                  </h3>
-                  <p className="mt-2 text-muted">{product.metrics}</p>
-                </div>
-              </div>
+              )}
 
               {product.link && (
                 <div className="mt-8">
@@ -104,7 +126,7 @@ export default function WorkPage() {
                     href={product.link}
                     className="font-semibold text-paper underline decoration-amber underline-offset-4"
                   >
-                    Visit {product.name} →
+                    Visit {product.linkLabel ?? product.name} →
                   </Link>
                 </div>
               )}

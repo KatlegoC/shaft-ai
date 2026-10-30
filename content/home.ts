@@ -4,8 +4,9 @@
 
 export const home = {
   hero: {
-    title: "We use AI to build digital products that fix how businesses run.",
-    sub: "From booking and payments for small businesses to parcel networks in spaza shops, and now the intelligence layer for underground mines.",
+    title: "AI-accelerated systems that work in the real world.",
+    lead: "Our product managers and engineers use AI across every stage of delivery, so you get robust, tested systems in weeks, not months, at a lower cost.",
+    sub: "Trusted by small businesses, security teams and product companies. Now building for mining.",
     primaryCta: "See our work",
     primaryHref: "/work",
     secondaryCta: "Talk to us",
@@ -57,9 +58,15 @@ export const home = {
         industry: "SMEs & services",
       },
       {
-        name: "Sparcel",
-        tagline: "Spaza shop parcel network",
-        industry: "Informal retail & logistics",
+        name: "Guard operations on WhatsApp",
+        tagline: "Check-ins, patrols and incident reports for security companies",
+        industry: "Security services",
+      },
+      {
+        name: "KALM Group: AI-powered sales and support for fireplaces",
+        tagline:
+          "AI advisors, sales assistants and quote builders that help product businesses sell and support customers faster.",
+        industry: "Home and retail products",
       },
     ],
   },
@@ -70,11 +77,6 @@ export const home = {
       {
         name: "SMEs & services",
         href: "/industries#smes",
-        badge: undefined,
-      },
-      {
-        name: "Informal retail & logistics",
-        href: "/industries#informal",
         badge: undefined,
       },
       {

@@ -14,6 +14,7 @@ import { ClosingCta } from "@/components/closing-cta";
 import { Container } from "@/components/container";
 import { Section } from "@/components/section";
 import { SectionHeading } from "@/components/section-heading";
+import { AetherFlowHero } from "@/components/ui/aether-flow-hero";
 import { home } from "@/content/home";
 import { primaryCta } from "@/content/site";
 
@@ -30,24 +31,15 @@ const whatWeDoIcons: Record<
 export default function HomePage() {
   return (
     <>
-      <section className="border-b border-line bg-ink">
-        <Container className="py-16 sm:py-24 lg:py-32">
-          <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-paper sm:text-5xl lg:text-[3.5rem] lg:leading-[1.08]">
-            {home.hero.title}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-            {home.hero.sub}
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href={home.hero.primaryHref}>
-              {home.hero.primaryCta}
-            </ButtonLink>
-            <ButtonLink href={home.hero.secondaryHref} variant="secondary">
-              {home.hero.secondaryCta}
-            </ButtonLink>
-          </div>
-        </Container>
-      </section>
+      <AetherFlowHero
+        title={home.hero.title}
+        lead={home.hero.lead}
+        description={home.hero.sub}
+        primaryHref={home.hero.primaryHref}
+        primaryLabel={home.hero.primaryCta}
+        secondaryHref={home.hero.secondaryHref}
+        secondaryLabel={home.hero.secondaryCta}
+      />
 
       <section aria-label="Key principles" className="border-b border-line">
         <Container>
@@ -152,8 +144,8 @@ export default function HomePage() {
       </Section>
 
       <section className="border-y border-line bg-panel">
-        <Container className="py-16 sm:py-20">
-          <div className="max-w-3xl">
+        <Container className="grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-2">
+          <div>
             <h2 className="text-3xl font-semibold tracking-tight text-paper sm:text-4xl">
               {home.miningTeaser.title}
             </h2>
@@ -165,6 +157,15 @@ export default function HomePage() {
                 {home.miningTeaser.cta}
               </ButtonLink>
             </div>
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden border border-line">
+            <Image
+              src="/images/haul-truck-pit.jpg"
+              alt="A loaded haul truck driving across an open pit."
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 40vw, 100vw"
+            />
           </div>
         </Container>
       </section>

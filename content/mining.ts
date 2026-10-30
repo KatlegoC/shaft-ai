@@ -9,6 +9,49 @@ export const miningPage = {
     "We're bringing what we've learned building for low-connectivity, high-adoption environments to underground mining.",
   lede: "Mine data platform, real-time KPIs, predictive maintenance, and practical tools for the workforce.",
 
+  photos: {
+    lead: {
+      src: "/images/underground-truck-crew.jpg",
+      alt: "A miner with a cap lamp walking ahead of an underground haul truck.",
+    },
+    fleet: [
+      {
+        src: "/images/underground-loader.jpg",
+        alt: "A miner in high-visibility clothing walking beside an underground loader.",
+      },
+      {
+        src: "/images/decline-tunnel.jpg",
+        alt: "A lit underground decline with rail track running into the tunnel.",
+      },
+      {
+        src: "/images/haul-truck-pit.jpg",
+        alt: "A loaded haul truck driving across an open pit.",
+      },
+    ],
+    people: [
+      {
+        src: "/images/shift-crew.jpg",
+        alt: "Miners in hard hats and high-visibility vests at a shift briefing.",
+      },
+      {
+        src: "/images/hard-hat.jpg",
+        alt: "A worker seen from behind, wearing a hard hat and high-visibility vest.",
+      },
+      {
+        src: "/images/safety-ppe.jpg",
+        alt: "Hard hats and high-visibility vests hanging ready for a shift.",
+      },
+    ],
+    underground: {
+      src: "/images/mine-cavern.jpg",
+      alt: "An underground chamber with lighting and services fixed along the rock.",
+    },
+    surface: {
+      src: "/images/surface-pit-fleet.jpg",
+      alt: "A haul truck, excavator and loader parked at the face of an open pit.",
+    },
+  },
+
   intelligenceLayer: {
     title: "The intelligence layer",
     cards: [

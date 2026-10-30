@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ButtonLink } from "@/components/button";
@@ -25,6 +26,17 @@ export default function IndustriesPage() {
             className={index !== 0 ? "border-t border-line" : ""}
           >
             <article>
+              {industry.image && (
+                <div className="relative mb-8 aspect-[16/7] overflow-hidden border border-line">
+                  <Image
+                    src={industry.image.src}
+                    alt={industry.image.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(min-width: 1024px) 70vw, 100vw"
+                  />
+                </div>
+              )}
               <h2 className="text-3xl font-semibold tracking-tight text-paper sm:text-4xl">
                 {industry.name}
               </h2>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Bot,
   Database,
@@ -46,6 +47,31 @@ const workforceIcons: Record<
   selfservice: Users,
 };
 
+function PhotoGrid({
+  photos,
+}: {
+  photos: readonly { src: string; alt: string }[];
+}) {
+  return (
+    <ul className="mt-10 grid gap-4 sm:grid-cols-3">
+      {photos.map((photo) => (
+        <li
+          key={photo.src}
+          className="relative aspect-[4/3] overflow-hidden border border-line"
+        >
+          <Image
+            src={photo.src}
+            alt={photo.alt}
+            fill
+            className="object-cover"
+            sizes="(min-width: 1024px) 30vw, 100vw"
+          />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export default function MiningPage() {
   return (
     <>
@@ -54,6 +80,19 @@ export default function MiningPage() {
         title={miningPage.title}
         lede={miningPage.lede}
       />
+
+      <div className="border-b border-line">
+        <div className="relative aspect-[2/1] w-full sm:aspect-[21/9]">
+          <Image
+            src={miningPage.photos.lead.src}
+            alt={miningPage.photos.lead.alt}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+      </div>
 
       <section className="border-b border-line bg-panel">
         <Container className="py-12 sm:py-16">
@@ -65,6 +104,7 @@ export default function MiningPage() {
 
       <Section>
         <SectionHeading title={miningPage.intelligenceLayer.title} />
+        <PhotoGrid photos={miningPage.photos.fleet} />
         <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {miningPage.intelligenceLayer.cards.map((card) => {
             const Icon = intelligenceIcons[card.icon];
@@ -86,6 +126,7 @@ export default function MiningPage() {
           title={miningPage.workforceTools.title}
           lede={miningPage.workforceTools.sub}
         />
+        <PhotoGrid photos={miningPage.photos.people} />
         <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {miningPage.workforceTools.cards.map((card) => {
             const Icon = workforceIcons[card.icon];
@@ -110,6 +151,26 @@ export default function MiningPage() {
           title={miningPage.connectivity.title}
           lede={miningPage.connectivity.lede}
         />
+        <div className="mt-10 grid gap-4 lg:grid-cols-2">
+          <div className="relative aspect-[4/3] overflow-hidden border border-line">
+            <Image
+              src={miningPage.photos.underground.src}
+              alt={miningPage.photos.underground.alt}
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          </div>
+          <div className="relative aspect-[4/3] overflow-hidden border border-line">
+            <Image
+              src={miningPage.photos.surface.src}
+              alt={miningPage.photos.surface.alt}
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+          </div>
+        </div>
         <ul className="mt-12 grid gap-6 md:grid-cols-2">
           {miningPage.connectivity.cards.map((card) => (
             <li key={card.title} className="border border-line bg-panel p-6">

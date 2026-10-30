@@ -15,7 +15,7 @@ export const aboutPage = {
   story: {
     title: "Our story",
     paragraphs: [
-      "We started building products for small businesses and the informal economy: booking platforms for salons, parcel networks for spaza shops. We learned to design for low connectivity, low-end devices, and users who rely on WhatsApp.",
+      "We started building products for small businesses and the informal economy, including booking platforms for salons. We learned to design for low connectivity, low-end devices, and users who rely on WhatsApp.",
       "Now we're bringing those lessons to construction and mining, where adoption is hard, connectivity is unreliable, and people need tools that work offline and fit how they actually operate.",
       "We use AI to accelerate our build, but product discipline, user research and rigorous testing make it reliable. We're a small senior team, and we only build what's worth building.",
     ],

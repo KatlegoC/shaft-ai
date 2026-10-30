@@ -12,6 +12,10 @@ export type Industry = {
     label: string;
     href: string;
   };
+  image?: {
+    src: string;
+    alt: string;
+  };
 };
 
 export const industriesPage = {
@@ -39,21 +43,42 @@ export const industriesPage = {
       },
     },
     {
-      id: "informal",
-      name: "Informal retail and logistics",
+      id: "security",
+      name: "Security services",
       problem:
-        "Spaza shops, street traders and informal networks are excluded from digital commerce and logistics systems.",
+        "Security companies rely on paper registers, radio calls and phone checks to know whether guards are on post, patrolling and reporting incidents.",
       solution:
-        "WhatsApp-native tools that turn informal retailers into service points for parcels, payments and data collection.",
+        "Guard check-ins, patrols and incident reporting on WhatsApp.",
       examples: [
-        "Parcel collection and drop-off networks",
-        "QR and collection codes",
-        "Payout tracking for shop owners",
-        "Works on basic phones and poor connectivity",
+        "Geolocation clock-in and clock-out on WhatsApp",
+        "Patrol check-ins at QR points",
+        "Incident reports with photos and voice notes",
+        "Alerts to supervisors when check-ins are missed",
+        "Shift handover notes and a supervisor dashboard",
       ],
       link: {
-        label: "See Sparcel",
-        href: "/work#sparcel",
+        label: "See guard operations",
+        href: "/work#guards",
+      },
+    },
+    {
+      id: "home-retail",
+      name: "Home and retail products",
+      problem:
+        "Customers struggle to choose the right fireplace for their space, fuel type and budget, and the sales team spends time answering the same questions and preparing quotes by hand.",
+      solution:
+        "AI advisors, sales assistants and quote builders that help product businesses sell and support customers faster.",
+      examples: [
+        "AI fireplace advisor",
+        "AI sales assistant on WhatsApp and the website",
+        "Instant quote builder",
+        "Lead capture and qualification",
+        "Room photo analysis",
+        "Aftercare support",
+      ],
+      link: {
+        label: "See KALM Group",
+        href: "/work#kalm",
       },
     },
     {
@@ -89,6 +114,10 @@ export const industriesPage = {
       link: {
         label: "Explore mining",
         href: "/mining",
+      },
+      image: {
+        src: "/images/underground-loader.jpg",
+        alt: "A miner in high-visibility clothing walking beside an underground loader.",
       },
     },
   ] satisfies readonly Industry[],
