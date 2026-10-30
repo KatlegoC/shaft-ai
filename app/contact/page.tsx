@@ -27,21 +27,18 @@ export default function ContactPage() {
             <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-amber">
               Where we are
             </h2>
-            <address className="mt-3 text-lg not-italic text-paper">
-              <a
-                href={`https://maps.google.com/maps?q=${encodeURIComponent(site.addressLine)}`}
-                className="underline decoration-amber underline-offset-4"
-              >
-                {site.addressLine}
-              </a>
-            </address>
-            <p className="mt-3 text-lg text-paper">{site.builtIn}</p>
+            <p className="mt-3 text-lg text-paper">
+              {contactPage.location.city}, {contactPage.location.country}
+            </p>
             <h2 className="mt-12 text-xs font-semibold uppercase tracking-[0.18em] text-amber">
               {contactPage.aside.nextTitle}
             </h2>
             <ol className="mt-4 space-y-3">
               {contactPage.aside.next.map((step, index) => (
-                <li key={step} className="grid grid-cols-[2rem_1fr] gap-2 text-muted">
+                <li
+                  key={step}
+                  className="grid grid-cols-[2rem_1fr] gap-2 text-muted"
+                >
                   <span className="font-semibold text-amber">
                     {String(index + 1).padStart(2, "0")}
                   </span>

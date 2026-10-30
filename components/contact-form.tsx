@@ -153,6 +153,14 @@ export function ContactForm() {
               </label>
               {field.type === "textarea" ? (
                 <textarea {...shared} rows={6} className={`${fieldClass} py-3`} />
+              ) : field.type === "select" && "options" in field ? (
+                <select {...shared} className={`${fieldClass} py-3`}>
+                  {field.options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
               ) : (
                 <input {...shared} type={field.type} />
               )}

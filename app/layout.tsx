@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Shaft AI | Underground fleet, safety and people data",
+    default: "Shaft AI | AI-built products for South African businesses",
     template: "%s | Shaft AI",
   },
   description: site.description,
@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_ZA",
     siteName: site.name,
-    title: "Shaft AI | Underground fleet, safety and people data",
+    title: "Shaft AI | AI-built products for South African businesses",
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shaft AI | Underground fleet, safety and people data",
+    title: "Shaft AI | AI-built products for South African businesses",
     description: site.description,
   },
 };

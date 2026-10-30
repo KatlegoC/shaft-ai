@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Shaft AI. Know what every machine underground is doing. Built in Cape Town, South Africa.";
+  "Shaft AI. AI-built products for the way South African businesses actually work. Built in Cape Town, South Africa.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,7 +39,7 @@ export default function OpenGraphImage() {
             maxWidth: 980,
           }}
         >
-          Know what every machine underground is doing.
+          AI-built products for the way South African businesses actually work.
         </div>
         <div
           style={{

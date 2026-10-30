@@ -2,66 +2,77 @@
  * How we work page copy.
  */
 
+type Section = {
+  title: string;
+  summary: string;
+  bullets: readonly string[];
+  note?: string;
+};
+
 export const howWeWorkPage = {
   eyebrow: "How we work",
-  title: "One section. A fixed price. A gate you control.",
-  lede: "Mining software fails when it arrives as a big bang. We work in months, on a pilot section, and we stop if the shift does not use it.",
+  title: "Discovery first. Phased delivery. Clear gates.",
+  lede: "We start by understanding the problem and the people who'll use the solution. Then we build in phases, with clear go/no-go decisions at every step.",
   description:
-    "Phased work for underground mines: twelve weeks of discovery, one pilot section, a fixed price per phase, and a go or no-go gate before the next spend.",
-  principlesTitle: "Principles",
-  principles: [
+    "AI-accelerated product development with human-led discipline, security and data ownership built in.",
+  sections: [
     {
-      title: "Months, not weeks",
-      body: "A decline does not change on a sprint calendar. Discovery is twelve weeks. A pilot runs through the rest of the first year.",
+      title: "Discovery first",
+      summary:
+        "We interview users, observe operations and map workflows before building.",
+      bullets: [
+        "Talk to the people who'll use it, in their environment",
+        "Observe how work actually happens, not how the org chart says it should",
+        "Map workflows, pain points and workarounds",
+        "Write a clear problem statement and baseline metrics",
+        "Define success criteria before we write a line of code",
+      ],
     },
     {
-      title: "Start with one pilot section",
-      body: "You choose the section. We prove the work there before anyone talks about the rest of the mine.",
+      title: "Phased delivery with clear gates",
+      summary:
+        "Each phase has measurable outcomes and a go/no-go decision before the next one starts.",
+      bullets: [
+        "Build in phases: discovery → pilot → scale",
+        "Every phase ends with a decision gate",
+        "Measure adoption and value at each gate",
+        "You can stop at any gate if the value isn't there",
+        "No new features until the current phase proves itself",
+      ],
     },
     {
-      title: "Adoption before features",
-      body: "If supervisors do not open it on shift, we do not add the next screen. Use comes first.",
+      title: "AI-accelerated, human-led",
+      summary:
+        "AI speeds up our build; product discipline, testing and security make it reliable.",
+      bullets: [
+        "Small senior teams using modern AI development tools",
+        "Ship faster and at lower cost than traditional agencies",
+        "Rigorous testing, security reviews and code quality standards",
+        "AI assists; humans design, decide and take responsibility",
+      ],
     },
     {
-      title: "Gated spend",
-      body: "You pay for the phase you approved. The next phase is a decision, not a default.",
+      title: "Security and data",
+      summary:
+        "Client owns its data, POPIA-aligned, encryption in transit and at rest, South African hosting options.",
+      bullets: [
+        "The client owns all data",
+        "POPIA-aligned data handling",
+        "Encryption in transit and at rest",
+        "South African hosting options available",
+        "Role-based access and audit logs",
+        "Working towards ISO 27001 certification",
+      ],
+      note: "ISO 27001 certification is in progress, not yet achieved.",
     },
-    {
-      title: "Integrate, don’t rebuild",
-      body: "Certified safety systems and the underground network stay in place. We build the software around them.",
-    },
-    {
-      title: "The mine’s IT team, from day one",
-      body: "Hosting, access, backups and support are agreed with your IT team before anything goes underground.",
-    },
-  ],
-  discovery: {
-    title: "Discovery: twelve weeks",
-    lede: "The first phase is on the operation, not in a workshop in town.",
-    steps: [
-      "Interviews with mine managers, supervisors, artisans and operators",
-      "Shift and time studies underground",
-      "A data and network audit: what you already collect, and what actually connects",
-      "Baseline KPIs, agreed in writing before a pilot starts",
-      "Co-design with the supervisors who will use the screens",
-    ],
-  },
-  commercial: {
-    title: "Commercial model",
-    lede: "The price is for a phase. The next phase waits for a gate.",
+  ] satisfies readonly Section[],
+  commitments: {
+    title: "What you can hold us to",
     items: [
-      {
-        title: "Fixed price per phase",
-        body: "You know the number before the phase starts. Scope changes are a conversation, not a surprise invoice.",
-      },
-      {
-        title: "Payments tied to agreed KPIs",
-        body: "The KPIs are the ones written down in discovery. Payment follows those, not a slide deck.",
-      },
-      {
-        title: "Stop at any gate",
-        body: "Ending the programme at a gate is a normal outcome. There is no penalty for stopping.",
-      },
+      "We'll tell you if the work isn't worth doing",
+      "Adoption and value will be measured, not assumed",
+      "You own your data, and you can take it with you",
+      "We stop billing if people stop using it",
     ],
   },
 } as const;

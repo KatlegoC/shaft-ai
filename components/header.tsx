@@ -8,7 +8,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { ButtonLink } from "@/components/button";
 import { Container } from "@/components/container";
 import { Logo } from "@/components/logo";
-import { assessmentCta, nav } from "@/content/site";
+import { primaryCta, nav } from "@/content/site";
 
 function isCurrent(pathname: string, href: string) {
   return pathname === href;
@@ -43,6 +43,14 @@ export function Header() {
           <ul className="flex items-center gap-6">
             {nav.map((item) => {
               const current = isCurrent(pathname, item.href);
+              const isCta = "cta" in item && item.cta;
+              if (isCta) {
+                return (
+                  <li key={item.href}>
+                    <ButtonLink href={item.href}>{item.label}</ButtonLink>
+                  </li>
+                );
+              }
               return (
                 <li key={item.href}>
                   <Link
@@ -59,13 +67,7 @@ export function Header() {
             })}
           </ul>
         </nav>
-        <div className="flex items-center gap-3">
-          <ButtonLink
-            href={assessmentCta.href}
-            className="hidden xl:inline-flex"
-          >
-            {assessmentCta.action}
-          </ButtonLink>
+        <div className="flex items-center gap-3 xl:hidden">
           <button
             ref={buttonRef}
             type="button"
@@ -92,6 +94,14 @@ export function Header() {
           <ul className="flex flex-col">
             {nav.map((item) => {
               const current = isCurrent(pathname, item.href);
+              const isCta = "cta" in item && item.cta;
+              if (isCta) {
+                return (
+                  <li key={item.href} className="mt-3">
+                    <ButtonLink href={item.href}>{item.label}</ButtonLink>
+                  </li>
+                );
+              }
               return (
                 <li key={item.href}>
                   <Link
@@ -108,9 +118,6 @@ export function Header() {
               );
             })}
           </ul>
-          <ButtonLink href={assessmentCta.href} className="mt-3">
-            {assessmentCta.action}
-          </ButtonLink>
         </Container>
       </nav>
     </header>

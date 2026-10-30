@@ -43,7 +43,7 @@ export async function submitEnquiry(
   const values: Record<EnquiryFieldName, string> = {
     name: "",
     company: "",
-    role: "",
+    industry: "",
     email: "",
     phone: "",
     message: "",
@@ -107,11 +107,11 @@ export async function submitEnquiry(
       body: JSON.stringify({
         name: values.name,
         company: values.company,
-        role: values.role,
+        industry: values.industry,
         email: values.email,
         phone: values.phone,
         message: values.message,
-        _subject: "Site assessment enquiry — Shaft AI",
+        _subject: "Enquiry — Shaft AI",
       }),
     });
 

@@ -1,6 +1,6 @@
 # Shaft AI
 
-Marketing site for Shaft AI. Built with Next.js (App Router), TypeScript and Tailwind CSS. Pages are statically generated. The contact form is a server action.
+Company site for Shaft AI, a black-owned South African company that uses AI to design and build digital products. Built with Next.js (App Router), TypeScript and Tailwind CSS. Pages are statically generated. The contact form is a server action.
 
 ## Requirements
 
@@ -37,19 +37,22 @@ Page text lives in typed constants under `content/`. Change the strings there; y
 
 | File | What it controls |
 | --- | --- |
-| `content/site.ts` | Company name, address, navigation, copyright, main call to action |
+| `content/site.ts` | Company name, tagline, navigation, copyright, main call to action |
 | `content/home.ts` | Home page |
-| `content/solutions.ts` | Solutions page, including the build vs integrate table |
+| `content/work.ts` | Work (portfolio) page with product case studies |
+| `content/industries.ts` | Industries page |
+| `content/mining.ts` | Mining page (dedicated industry page) |
 | `content/how-we-work.ts` | How we work |
-| `content/architecture.ts` | Architecture and security |
-| `content/about.ts` | About, founder cards, local skills |
+| `content/about.ts` | About page |
 | `content/contact.ts` | Contact page and form labels |
 
-Before launch, replace:
+Before launch:
 
-- Founder names, roles, biographies and LinkedIn URLs in `content/about.ts`. Duplicate a card to add a person. Leave `linkedin` as `""` until you have a URL.
+- Add verified metrics to products in `content/work.ts` (remove placeholder text)
+- Confirm product status (Live/Pilot/In Development) in `content/work.ts`
+- Add product links and screenshots if available
 
-Do not add client names, testimonials, statistics or certification claims that the company does not hold. The architecture page states that ISO 27001 and SOC 2 are in progress, not achieved.
+Do not add client names, testimonials, statistics or certification claims that the company does not hold. The how-we-work page states that ISO 27001 certification is in progress, not yet achieved.
 
 ## Replace the drawings
 
