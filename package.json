@@ -1,5 +1,5 @@
 {
-  "name": "shaft-ai-app",
+  "name": "shaft-ai",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "framer-motion": "^14.8.0",
+    "lucide-react": "^1.65.0",
     "next": "16.4.3",
     "react": "19.3.0",
     "react-dom": "19.3.0"
@@ -22,5 +24,6 @@
     "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "Marketing site for Shaft AI, a Kgosi Kganya Technologies company."
 }

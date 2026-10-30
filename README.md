@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shaft AI
 
-## Getting Started
+Marketing site for Shaft AI, a Kgosi Kganya Technologies company. Built with Next.js (App Router), TypeScript and Tailwind CSS. Pages are statically generated. The contact form is a server action.
 
-First, run the development server:
+## Requirements
+
+- Node.js 20.19 or later (22 LTS is a safe choice)
+- npm
+
+## Setup
+
+```bash
+npm install
+cp .env.example .env.local
+```
+
+Edit `.env.local` when you are ready to send enquiries and set the public URL. Both can stay as the example values while you work locally.
+
+## Run
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Production build, locally:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Edit the copy
 
-To learn more about Next.js, take a look at the following resources:
+Page text lives in typed constants under `content/`. Change the strings there; you do not need to touch the layout to rewrite a sentence.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| File | What it controls |
+| --- | --- |
+| `content/site.ts` | Company name, address, navigation, copyright, main call to action |
+| `content/home.ts` | Home page |
+| `content/solutions.ts` | Solutions page, including the build vs integrate table |
+| `content/how-we-work.ts` | How we work |
+| `content/architecture.ts` | Architecture and security |
+| `content/about.ts` | About, founder cards, local skills |
+| `content/contact.ts` | Contact page and form labels |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Before launch, replace:
 
-## Deploy on Vercel
+- Founder names, roles, biographies and LinkedIn URLs in `content/about.ts`. Duplicate a card to add a person. Leave `linkedin` as `""` until you have a URL.
+- `[CASE STUDY COMING SOON]` in `content/home.ts`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Do not add client names, testimonials, statistics or certification claims that the company does not hold. The architecture page states that ISO 27001 and SOC 2 are in progress, not achieved.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Replace the drawings
+
+Equipment art is in `public/images/`:
+
+- `lhd-loader.svg` — underground load-haul-dump loader
+- `haul-truck.svg` — underground haul truck
+- `decline-section.svg` — decline section
+
+Swap in a photograph by replacing the file (or adding a `.jpg` / `.webp` and pointing `src`, `width`, `height` and `alt` at it in `content/home.ts`). Alt text should describe the picture.
+
+## Contact form
+
+The form posts to a [server action](app/contact/actions.ts). It checks name, company, role, email, phone and message.
+
+To deliver mail, create a form at [Formspree](https://formspree.io) and set `FORMSPREE_FORM_ID` to the id in the form URL (`https://formspree.io/f/xxxxxxxx`).
+
+- Locally, with no id set, a valid submission shows the success state and is not emailed. A note on the page says so. That note is stripped out of production builds.
+- In production, with no id set, the visitor sees an error and the email address, so a message is not silently dropped.
+
+## Deploy to Vercel
+
+1. Push the repository to GitHub, GitLab or Bitbucket.
+2. In Vercel, import the project. Framework preset: Next.js. No extra build settings.
+3. Add environment variables:
+   - `NEXT_PUBLIC_SITE_URL` — the live origin, for example `https://www.example.co.za` (no trailing slash). This sets canonical URLs, Open Graph and `sitemap.xml`.
+   - `FORMSPREE_FORM_ID` — the Formspree id.
+4. Deploy. Vercel builds the static pages and hosts the server action for the form.
+
+`robots.txt` and `sitemap.xml` are generated from `app/robots.ts` and `app/sitemap.ts`.
+
+## Scripts
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Local development |
+| `npm run build` | Production build |
+| `npm start` | Serve the production build |
+| `npm run lint` | ESLint |

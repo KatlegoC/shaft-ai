@@ -1,69 +1,199 @@
+import {
+  Gauge,
+  LayoutDashboard,
+  Route,
+  ScanLine,
+  Server,
+  Unplug,
+  type LucideIcon,
+} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+import haulTruck from "@/components/omid-roshan-Evss0Whf5OI-unsplash.jpg";
+import declineTunnel from "@/components/alpha-perspective-W0qlm5HDVjI-unsplash.jpg";
+import { ButtonLink } from "@/components/button";
+import { ClosingCta } from "@/components/closing-cta";
+import { Container } from "@/components/container";
+import { MarkedPlaceholder } from "@/components/placeholder";
+import { Section } from "@/components/section";
+import { SectionHeading } from "@/components/section-heading";
+import { Timeline } from "@/components/timeline";
+import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
+import { home } from "@/content/home";
+import { assessmentCta } from "@/content/site";
+
+const problemIcons: Record<(typeof home.problem.items)[number]["icon"], LucideIcon> =
+  {
+    cost: Gauge,
+    decline: Route,
+    adoption: Unplug,
+  };
+
+const stepIcons: Record<(typeof home.howItWorks.steps)[number]["icon"], LucideIcon> =
+  {
+    capture: ScanLine,
+    connect: Server,
+    act: LayoutDashboard,
+  };
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <ScrollExpandMedia
+      mediaType="image"
+      mediaSrc={haulTruck}
+      bgImageSrc={declineTunnel}
+      mediaAlt={home.scrollHero.mediaAlt}
+      bgAlt={home.scrollHero.bgAlt}
+      title={home.scrollHero.title}
+      date={home.scrollHero.date}
+      scrollToExpand={home.scrollHero.scrollToExpand}
+      textBlend
+    >
+      <section className="border-b border-line bg-ink">
+        <Container className="py-16 sm:py-24">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber">
+            {home.eyebrow}
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <h1 className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-paper sm:text-5xl lg:text-[3.25rem] lg:leading-[1.08]">
+            {home.hero.title}
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+            {home.hero.sub}
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <ButtonLink href={assessmentCta.href}>{home.hero.primaryCta}</ButtonLink>
+            <ButtonLink href={home.hero.secondaryHref} variant="secondary">
+              {home.hero.secondaryCta}
+            </ButtonLink>
+          </div>
+        </Container>
+      </section>
+
+      <section aria-label="What the platform is built to do" className="border-b border-line">
+        <Container>
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-4">
+            {home.facts.map((fact) => (
+              <li
+                key={fact}
+                className="border-b border-line py-4 text-sm font-medium text-paper sm:border-b-0 sm:border-r sm:px-5 sm:py-6 sm:last:border-r-0 lg:px-6"
+              >
+                {fact}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      <Section>
+        <SectionHeading
+          eyebrow={home.problem.eyebrow}
+          title={home.problem.title}
+        />
+        <ul className="mt-12 grid gap-6 lg:grid-cols-3">
+          {home.problem.items.map((item) => {
+            const Icon = problemIcons[item.icon];
+            return (
+              <li key={item.title} className="border border-line bg-panel p-6">
+                <Icon aria-hidden="true" className="size-5 text-muted" />
+                <h3 className="mt-5 text-xl font-semibold tracking-tight text-paper">
+                  {item.title}
+                </h3>
+                <p className="mt-3 leading-relaxed text-muted">{item.body}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </Section>
+
+      <Section>
+        <SectionHeading
+          eyebrow={home.equipment.eyebrow}
+          title={home.equipment.title}
+          lede={home.equipment.lede}
+        />
+        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {home.equipment.gallery.map((image) => (
+            <li key={image.src}>
+              <figure className="h-full border border-line bg-panel">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 240px, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="border-t border-line px-4 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+                  {image.caption}
+                </figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <Section id="how-it-works">
+        <SectionHeading
+          eyebrow={home.howItWorks.eyebrow}
+          title={home.howItWorks.title}
+          lede={home.howItWorks.lede}
+        />
+        <ol className="mt-12 grid gap-10 lg:grid-cols-3">
+          {home.howItWorks.steps.map((step, index) => {
+            const Icon = stepIcons[step.icon];
+            return (
+              <li key={step.title}>
+                <div className="flex items-center gap-3">
+                  <Icon aria-hidden="true" className="size-5 text-muted" />
+                  <p className="text-xs font-semibold tracking-[0.16em] text-amber">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                </div>
+                <h3 className="mt-4 text-2xl font-semibold tracking-tight text-paper">
+                  {step.title}
+                </h3>
+                <ul className="mt-4 space-y-3">
+                  {step.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="border-l border-line pl-4 leading-relaxed text-muted"
+                    >
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          })}
+        </ol>
+      </Section>
+
+      <Section id="phases">
+        <SectionHeading
+          eyebrow={home.phases.eyebrow}
+          title={home.phases.title}
+          lede={home.phases.lede}
+        />
+        <Timeline />
+        <p className="mt-8">
+          <Link
+            href="/how-we-work"
+            className="font-semibold text-paper underline decoration-amber underline-offset-4"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            How the phases are priced
+          </Link>
+        </p>
+      </Section>
+
+      <Section>
+        <MarkedPlaceholder label={home.caseStudy.label}>
+          {home.caseStudy.body}
+        </MarkedPlaceholder>
+      </Section>
+
+      <ClosingCta band support={assessmentCta.support} />
+    </ScrollExpandMedia>
   );
 }

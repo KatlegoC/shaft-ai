@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" fill="none">
+  <rect width="800" height="480" fill="#1A1D21"/>
+  <defs>
+    <pattern id="sheet" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#F3F1EC" stroke-opacity="0.07"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="480" fill="url(#sheet)"/>
+  <text x="48" y="48" fill="#9C9A94" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" letter-spacing="2">SIDE ELEVATION</text>
+  <text x="48" y="448" fill="#9C9A94" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" letter-spacing="1.5">NOT TO SCALE</text>
+  <g stroke="#F3F1EC" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M70 250 L40 320 L56 392 L168 392 L198 292 L164 236 Z"/>
+    <path d="M148 252 L292 214"/>
+    <path d="M168 330 L286 286"/>
+    <path d="M250 230 H330 L352 268 H390 V340 H248"/>
+    <path d="M360 268 H470 V196 H548 V248 H650 V340 H400"/>
+    <path d="M478 208 H540 V248 H478 Z" stroke="#F5A623"/>
+    <circle cx="248" cy="360" r="46"/>
+    <circle cx="248" cy="360" r="12"/>
+    <circle cx="575" cy="360" r="46"/>
+    <circle cx="575" cy="360" r="12"/>
+    <path d="M202 360 H430"/>
+    <path d="M294 360 H529"/>
+  </g>
+  <circle cx="352" cy="300" r="7" stroke="#F5A623" stroke-width="1.75"/>
+  <path d="M64 406 H736" stroke="#F5A623" stroke-width="1.25"/>
+  <path d="M64 406 V396 M736 406 V396" stroke="#F5A623" stroke-width="1.25"/>
+</svg>
