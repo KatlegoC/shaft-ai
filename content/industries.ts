@@ -62,6 +62,26 @@ export const industriesPage = {
       },
     },
     {
+      id: "estates",
+      name: "Estates, complexes and secure sites",
+      problem:
+        "Gate access relies on guards writing down number plates, paper visitor registers and remote opening by phone, so it's slow, error-prone and hard to audit.",
+      solution:
+        "AI cameras at the gate that recognise vehicles and number plates and detect people and objects, linked to a simple access system.",
+      examples: [
+        "Number plate recognition against approved lists",
+        "Automatic entry for known vehicles",
+        "Detection of people, tailgating and loitering",
+        "Visitor pre-approval on WhatsApp",
+        "Alerts for flagged plates and after-hours movement",
+        "Searchable entry and exit logs",
+      ],
+      link: {
+        label: "See AI vision for gates",
+        href: "/solutions#gates",
+      },
+    },
+    {
       id: "home-retail",
       name: "Home and retail products",
       problem:

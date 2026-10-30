@@ -42,6 +42,12 @@ export const home = {
         title: "WhatsApp and mobile-first tools",
         body: "On the phones people already use, offline where needed.",
       },
+      {
+        icon: "vision",
+        title: "AI vision & access control",
+        body: "Object detection and number plate recognition for gates, estates, sites and mines.",
+        href: "/solutions#gates",
+      },
     ],
   },
   ourWork: {

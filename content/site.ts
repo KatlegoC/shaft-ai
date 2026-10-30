@@ -23,6 +23,7 @@ export const siteUrl =
 
 export const nav = [
   { href: "/work", label: "Work" },
+  { href: "/solutions", label: "Solutions" },
   { href: "/industries", label: "Industries" },
   { href: "/mining", label: "Mining" },
   { href: "/how-we-work", label: "How we work" },

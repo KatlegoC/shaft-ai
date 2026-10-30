@@ -1,6 +1,7 @@
 import Image from "next/image";
 import {
   Bot,
+  Cctv,
   Database,
   FileText,
   Gauge,
@@ -33,6 +34,7 @@ const intelligenceIcons: Record<
   predictive: TrendingUp,
   assistant: Bot,
   reporting: FileText,
+  gate: Cctv,
 };
 
 const workforceIcons: Record<

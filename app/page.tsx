@@ -2,6 +2,7 @@ import {
   BookOpen,
   Gauge,
   MessageSquare,
+  ScanEye,
   Smartphone,
   Sparkles,
   type LucideIcon,
@@ -26,6 +27,7 @@ const whatWeDoIcons: Record<
   build: Sparkles,
   data: Gauge,
   mobile: Smartphone,
+  vision: ScanEye,
 };
 
 export default function HomePage() {
@@ -61,16 +63,29 @@ export default function HomePage() {
           eyebrow={home.whatWeDo.eyebrow}
           title={home.whatWeDo.title}
         />
-        <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {home.whatWeDo.cards.map((card) => {
             const Icon = whatWeDoIcons[card.icon];
-            return (
-              <li key={card.title} className="border border-line bg-panel p-6">
+            const href = "href" in card ? card.href : undefined;
+            const body = (
+              <>
                 <Icon aria-hidden="true" className="size-5 text-muted" />
                 <h3 className="mt-5 text-xl font-semibold tracking-tight text-paper">
                   {card.title}
                 </h3>
                 <p className="mt-3 leading-relaxed text-muted">{card.body}</p>
+              </>
+            );
+            const cardClass = "block h-full border border-line bg-panel p-6";
+            return (
+              <li key={card.title}>
+                {href ? (
+                  <Link href={href} className={`${cardClass} hover:border-amber`}>
+                    {body}
+                  </Link>
+                ) : (
+                  <div className={cardClass}>{body}</div>
+                )}
               </li>
             );
           })}

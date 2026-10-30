@@ -85,6 +85,11 @@ export const miningPage = {
         title: "Automated reporting",
         body: "Production, MHSA and SLP reporting.",
       },
+      {
+        icon: "gate",
+        title: "Smart portal and gate control",
+        body: "Number plate recognition and vehicle counting at the mine gate and decline portal, logging which vehicles and machines enter and leave and when.",
+      },
     ],
   },
 
