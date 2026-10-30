@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Shaft AI. Know what every machine underground is doing. A Kgosi Kganya Technologies company, built in Cape Town, South Africa.";
+  "Shaft AI. Know what every machine underground is doing. Built in Cape Town, South Africa.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -48,7 +48,7 @@ export default function OpenGraphImage() {
             color: "#C5C3BE",
           }}
         >
-          A Kgosi Kganya Technologies company · Built in Cape Town, South Africa
+          Built in Cape Town, South Africa
         </div>
       </div>
     ),

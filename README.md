@@ -1,6 +1,6 @@
 # Shaft AI
 
-Marketing site for Shaft AI, a Kgosi Kganya Technologies company. Built with Next.js (App Router), TypeScript and Tailwind CSS. Pages are statically generated. The contact form is a server action.
+Marketing site for Shaft AI. Built with Next.js (App Router), TypeScript and Tailwind CSS. Pages are statically generated. The contact form is a server action.
 
 ## Requirements
 

@@ -5,7 +5,6 @@
 
 export const site = {
   name: "Shaft AI",
-  parentCompany: "Kgosi Kganya Technologies",
   city: "Cape Town",
   country: "South Africa",
   builtIn: "Built in Cape Town, South Africa",
@@ -15,7 +14,7 @@ export const site = {
   postalCode: "7405",
   description:
     "Shaft AI connects fleet, safety and people data for underground mines. It works offline, and the client owns the data.",
-  copyright: "© Shaft AI, a Kgosi Kganya Technologies company",
+  copyright: "© Shaft AI",
 } as const;
 
 export const siteUrl =

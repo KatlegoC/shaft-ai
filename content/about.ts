@@ -16,9 +16,9 @@ export type Founder = {
 export const aboutPage = {
   eyebrow: "About",
   title: "A new company. An old problem.",
-  lede: "Shaft AI is a newly formed, black-owned South African company. It is part of Kgosi Kganya Technologies and is built in Cape Town, South Africa.",
+  lede: "Shaft AI is a newly formed, black-owned South African company built in Cape Town, South Africa.",
   description:
-    "Shaft AI is a newly formed, black-owned South African company in the Kgosi Kganya Technologies group, built in Cape Town, South Africa.",
+    "Shaft AI is a newly formed, black-owned South African company built in Cape Town, South Africa.",
   foundersIntro: {
     title: "Founders",
     body: "The founders bring digital product leadership from telecoms and fintech. They have built and scaled large platforms, and they are putting that discipline to work underground.",
