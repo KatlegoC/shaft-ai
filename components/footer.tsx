@@ -32,14 +32,32 @@ export function Footer() {
           <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-amber">
             Contact
           </h2>
-          <p className="mt-4 text-muted">
-            <a
-              href={`https://maps.google.com/maps?q=${encodeURIComponent(site.addressLine)}`}
-              className="underline decoration-amber/70 underline-offset-4 hover:text-paper"
-            >
-              {site.addressLine}
-            </a>
-          </p>
+          <ul className="mt-4 space-y-3 text-muted">
+            <li>
+              <a
+                href={`mailto:${site.email}`}
+                className="underline decoration-amber/70 underline-offset-4 hover:text-paper"
+              >
+                {site.email}
+              </a>
+            </li>
+            <li>
+              <a
+                href={site.phoneHref}
+                className="underline decoration-amber/70 underline-offset-4 hover:text-paper"
+              >
+                {site.phone}
+              </a>
+            </li>
+            <li>
+              <a
+                href={`https://maps.google.com/maps?q=${encodeURIComponent(site.addressLine)}`}
+                className="underline decoration-amber/70 underline-offset-4 hover:text-paper"
+              >
+                {site.addressLine}
+              </a>
+            </li>
+          </ul>
         </div>
       </Container>
       <Container className="border-t border-line py-6">
