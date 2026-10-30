@@ -19,6 +19,9 @@ export const contactPage = {
     city: "Cape Town",
     country: "South Africa",
   },
+  email: "hello@shaftai.co.za",
+  phone: "050 215 1626",
+  phoneHref: "tel:+27502151626",
   form: {
     title: "Get in touch",
     requiredNote: "Fields marked * are required.",

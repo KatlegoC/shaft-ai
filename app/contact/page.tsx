@@ -31,6 +31,28 @@ export default function ContactPage() {
               {contactPage.location.city}, {contactPage.location.country}
             </p>
             <h2 className="mt-12 text-xs font-semibold uppercase tracking-[0.18em] text-amber">
+              Email
+            </h2>
+            <p className="mt-3 text-lg">
+              <a
+                href={`mailto:${contactPage.email}`}
+                className="text-paper underline decoration-amber/70 underline-offset-4 hover:text-amber"
+              >
+                {contactPage.email}
+              </a>
+            </p>
+            <h2 className="mt-12 text-xs font-semibold uppercase tracking-[0.18em] text-amber">
+              Phone
+            </h2>
+            <p className="mt-3 text-lg">
+              <a
+                href={contactPage.phoneHref}
+                className="text-paper underline decoration-amber/70 underline-offset-4 hover:text-amber"
+              >
+                {contactPage.phone}
+              </a>
+            </p>
+            <h2 className="mt-12 text-xs font-semibold uppercase tracking-[0.18em] text-amber">
               {contactPage.aside.nextTitle}
             </h2>
             <ol className="mt-4 space-y-3">
