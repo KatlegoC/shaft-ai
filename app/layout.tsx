@@ -46,10 +46,6 @@ const organizationJsonLd = {
   name: site.name,
   description: site.description,
   url: siteUrl,
-  parentOrganization: {
-    "@type": "Organization",
-    name: site.parentCompany,
-  },
   address: {
     "@type": "PostalAddress",
     streetAddress: `${site.street}, ${site.suburb}`,

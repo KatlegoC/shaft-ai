@@ -11,8 +11,7 @@ export function Footer() {
         <div className="max-w-sm">
           <Logo />
           <p className="mt-4 leading-relaxed text-muted">
-            Shaft AI is a black-owned South African company, part of{" "}
-            {site.parentCompany}. {site.builtIn}.
+            Shaft AI is a black-owned South African company. {site.builtIn}.
           </p>
         </div>
         <nav aria-label="Footer">
