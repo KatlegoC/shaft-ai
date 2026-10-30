@@ -161,8 +161,4 @@ export const home = {
       },
     ],
   },
-  caseStudy: {
-    label: "[CASE STUDY COMING SOON]",
-    body: "A written account of a pilot section will go here once a mine has agreed to be named.",
-  },
 } as const;

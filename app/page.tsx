@@ -187,12 +187,6 @@ export default function HomePage() {
         </p>
       </Section>
 
-      <Section>
-        <MarkedPlaceholder label={home.caseStudy.label}>
-          {home.caseStudy.body}
-        </MarkedPlaceholder>
-      </Section>
-
       <ClosingCta band support={assessmentCta.support} />
     </ScrollExpandMedia>
   );

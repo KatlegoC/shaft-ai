@@ -48,7 +48,6 @@ Page text lives in typed constants under `content/`. Change the strings there; y
 Before launch, replace:
 
 - Founder names, roles, biographies and LinkedIn URLs in `content/about.ts`. Duplicate a card to add a person. Leave `linkedin` as `""` until you have a URL.
-- `[CASE STUDY COMING SOON]` in `content/home.ts`
 
 Do not add client names, testimonials, statistics or certification claims that the company does not hold. The architecture page states that ISO 27001 and SOC 2 are in progress, not achieved.
 
