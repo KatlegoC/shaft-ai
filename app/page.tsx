@@ -6,6 +6,7 @@ import {
   Sparkles,
   type LucideIcon,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { ButtonLink } from "@/components/button";
@@ -92,6 +93,16 @@ export default function HomePage() {
         <ul className="mt-12 grid gap-6 md:grid-cols-2">
           {home.ourWork.preview.map((product) => (
             <li key={product.name} className="border border-line bg-panel p-8">
+              {product.name === "Lupp" && (
+                <div className="mb-4 flex size-12 items-center justify-center">
+                  <Image
+                    src="/images/lupp-logo.svg"
+                    alt="Lupp logo"
+                    width={48}
+                    height={48}
+                  />
+                </div>
+              )}
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber">
                 {product.industry}
               </p>

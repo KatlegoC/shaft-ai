@@ -23,20 +23,20 @@ export const workPage = {
     {
       id: "lupp",
       name: "Lupp",
-      tagline: "Booking and payments platform for small service businesses",
+      tagline: "Digital loyalty and bookings for local businesses",
       problem:
         "Salons, barbers and beauty businesses run bookings on calls and WhatsApp messages, with no-shows and cash-only payments.",
       whatWeBuilt:
-        "Online booking, in-app payments (full or deposit), subscriptions, reviews and ratings, merchant dashboard.",
+        "Digital loyalty programme, online booking, reviews and ratings, customer discovery, and merchant dashboard — all from one QR code.",
       techHighlights: [
-        "Payment gateway integrations",
-        "Mobile-first design",
-        "Merchant onboarding flow",
-        "Customer notifications via SMS and email",
+        "QR code check-in and loyalty tracking",
+        "Booking system with team member selection",
+        "Customer discovery and search",
+        "Star ratings and reviews",
       ],
       status: "Live",
-      metrics: "[Add verified figures: number of businesses, monthly bookings]",
-      link: "",
+      metrics: "2,000+ local businesses across South Africa · +32% return visits",
+      link: "https://www.lupprewards.co.za",
       screenshots: [],
     },
     {

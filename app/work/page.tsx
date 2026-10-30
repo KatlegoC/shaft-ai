@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { ClosingCta } from "@/components/closing-cta";
@@ -25,12 +26,26 @@ export default function WorkPage() {
             className={index !== 0 ? "border-t border-line" : ""}
           >
             <article>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber">
-                {product.tagline}
-              </p>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-paper sm:text-4xl">
-                {product.name}
-              </h2>
+              <div className="flex items-center gap-4">
+                {product.id === "lupp" && (
+                  <div className="flex size-12 shrink-0 items-center justify-center">
+                    <Image
+                      src="/images/lupp-logo.svg"
+                      alt="Lupp logo"
+                      width={48}
+                      height={48}
+                    />
+                  </div>
+                )}
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber">
+                    {product.tagline}
+                  </p>
+                  <h2 className="mt-1 text-3xl font-semibold tracking-tight text-paper sm:text-4xl">
+                    {product.name}
+                  </h2>
+                </div>
+              </div>
 
               <div className="mt-12 grid gap-12 lg:grid-cols-2">
                 <div>
